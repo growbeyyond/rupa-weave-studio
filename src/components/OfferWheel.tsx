@@ -5,6 +5,8 @@ const OfferWheel = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSpinning, setIsSpinning] = useState(false);
   const [result, setResult] = useState<string | null>(null);
+  const [showForm, setShowForm] = useState(false);
+  const [userDetails, setUserDetails] = useState({ name: '', mobile: '' });
 
   const offers = [
     '10% OFF',
@@ -36,8 +38,24 @@ const OfferWheel = () => {
       const randomOffer = offers[Math.floor(Math.random() * offers.length)];
       setResult(randomOffer);
       setIsSpinning(false);
+      setShowForm(true);
       localStorage.setItem('hasSeenOfferWheel', 'true');
     }, 3000);
+  };
+
+  const sendToWhatsApp = () => {
+    const phoneNumber = "919876543210"; // Your WhatsApp number
+    const message = `🎉 Hi! I just won ${result} from Rupa's offer wheel!
+    
+My Details:
+📱 Name: ${userDetails.name}
+📞 Mobile: ${userDetails.mobile}
+
+I'm interested in your ethnic wear collection. Please share more details about the offer!`;
+
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+    setIsOpen(false);
   };
 
   const closeWheel = () => {
@@ -104,11 +122,39 @@ const OfferWheel = () => {
           <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-8 border-l-transparent border-r-transparent border-b-gray-800 z-10"></div>
         </div>
 
-        {result && (
+        {result && !showForm && (
           <div className="bg-primary text-white p-4 rounded-lg mb-4 animate-bounce-gentle">
             <h3 className="font-bold text-lg">🎉 Congratulations! 🎉</h3>
             <p className="text-2xl font-bold">{result}</p>
             <p className="text-sm mt-2">Use code: <strong>SPIN{result.replace(/[^0-9]/g, '') || '25'}</strong></p>
+          </div>
+        )}
+
+        {result && showForm && (
+          <div className="space-y-4">
+            <div className="bg-primary text-white p-4 rounded-lg mb-4">
+              <h3 className="font-bold text-lg">🎉 You Won: {result}! 🎉</h3>
+              <p className="text-sm">Please share your details to claim your offer</p>
+            </div>
+            
+            <div className="space-y-3">
+              <input
+                type="text"
+                placeholder="Your Full Name"
+                value={userDetails.name}
+                onChange={(e) => setUserDetails({...userDetails, name: e.target.value})}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
+                required
+              />
+              <input
+                type="tel"
+                placeholder="Your Mobile Number"
+                value={userDetails.mobile}
+                onChange={(e) => setUserDetails({...userDetails, mobile: e.target.value})}
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
+                required
+              />
+            </div>
           </div>
         )}
 
@@ -122,21 +168,15 @@ const OfferWheel = () => {
           </button>
         )}
 
-        {result && (
-          <div className="flex gap-2">
-            <button
-              onClick={closeWheel}
-              className="flex-1 bg-primary text-white px-4 py-2 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
-            >
-              Shop Now
-            </button>
-            <button
-              onClick={closeWheel}
-              className="flex-1 border border-gray-300 text-gray-700 px-4 py-2 rounded-lg font-semibold hover:bg-gray-50 transition-colors"
-            >
-              Maybe Later
-            </button>
-          </div>
+        {result && showForm && (
+          <button
+            onClick={sendToWhatsApp}
+            disabled={!userDetails.name || !userDetails.mobile}
+            className="w-full bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          >
+            <span>📱</span>
+            Claim Offer via WhatsApp
+          </button>
         )}
       </div>
     </div>
