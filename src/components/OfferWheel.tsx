@@ -105,15 +105,21 @@ I'm interested in your ethnic wear collection. Please share more details about t
             {offers.map((offer, index) => (
               <div
                 key={index}
-                className="absolute text-white font-bold text-xs"
+                className="absolute text-white font-bold text-xs flex items-center justify-center"
                 style={{
                   top: '50%',
                   left: '50%',
-                  transform: `rotate(${index * 45}deg) translateY(-80px) rotate(-${index * 45}deg)`,
-                  transformOrigin: '0 80px'
+                  width: '90px',
+                  height: '20px',
+                  transform: `translate(-50%, -50%) rotate(${index * 45 + 22.5}deg) translateY(-70px)`,
+                  transformOrigin: '50% 70px',
+                  textAlign: 'center',
+                  lineHeight: '1.2'
                 }}
               >
-                {offer}
+                <span style={{ transform: `rotate(-${index * 45 + 22.5}deg)` }}>
+                  {offer}
+                </span>
               </div>
             ))}
           </div>
