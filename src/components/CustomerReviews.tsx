@@ -1,4 +1,11 @@
 import { Star } from 'lucide-react';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 
 const CustomerReviews = () => {
   const reviews = [
@@ -36,6 +43,27 @@ const CustomerReviews = () => {
       rating: 5,
       review: "Love the traditional collection! The fabric quality is top-notch and the designs are unique. Highly recommend Rupa Collections!",
       product: "Salwar Kameez Set"
+    },
+    {
+      name: "Deepika Nair",
+      location: "Kochi",
+      rating: 5,
+      review: "Ordered a wedding saree and it was absolutely perfect! The silk quality and zari work exceeded my expectations. Thank you Rupa Collections!",
+      product: "Wedding Silk Saree"
+    },
+    {
+      name: "Rashmi Sharma",
+      location: "Jaipur",
+      rating: 5,
+      review: "Amazing collection of ethnic wear! The customer service team was very helpful in selecting the right size. Highly satisfied with my purchase.",
+      product: "Anarkali Set"
+    },
+    {
+      name: "Nandini Iyer",
+      location: "Chennai",
+      rating: 5,
+      review: "Best quality kurtis I've ever bought online! The fabric is comfortable and the designs are trendy. Will definitely be a repeat customer.",
+      product: "Designer Kurti"
     }
   ];
 
@@ -51,29 +79,43 @@ const CustomerReviews = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reviews.map((review, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-center mb-4">
-                {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                ))}
-              </div>
-              
-              <p className="font-inter text-gray-700 mb-4 line-height-relaxed">
-                "{review.review}"
-              </p>
-              
-              <div className="border-t pt-4">
-                <h4 className="font-inter font-semibold text-foreground">
-                  {review.name}
-                </h4>
-                <p className="font-inter text-sm text-muted-foreground">
-                  {review.location} • Purchased: {review.product}
-                </p>
-              </div>
-            </div>
-          ))}
+        <div className="relative">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {reviews.map((review, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 h-full">
+                    <div className="flex items-center mb-4">
+                      {[...Array(review.rating)].map((_, i) => (
+                        <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
+                    
+                    <p className="font-inter text-gray-700 mb-4 line-height-relaxed">
+                      "{review.review}"
+                    </p>
+                    
+                    <div className="border-t pt-4 mt-auto">
+                      <h4 className="font-inter font-semibold text-foreground">
+                        {review.name}
+                      </h4>
+                      <p className="font-inter text-sm text-muted-foreground">
+                        {review.location} • Purchased: {review.product}
+                      </p>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex -left-12" />
+            <CarouselNext className="hidden md:flex -right-12" />
+          </Carousel>
         </div>
 
         <div className="text-center mt-12">

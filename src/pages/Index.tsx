@@ -37,8 +37,6 @@ const Index = () => {
       
       <HeroBanner />
       
-      <CustomerReviews />
-      
       <div className="max-w-7xl mx-auto">
         <div className="py-16">
           <h2 className="font-playfair text-4xl font-bold text-center mb-8 text-foreground">
@@ -53,6 +51,8 @@ const Index = () => {
           columns={4}
         />
       </div>
+      
+      <CustomerReviews />
       
       <Footer />
       
