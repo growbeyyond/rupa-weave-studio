@@ -4,6 +4,14 @@ import { ShoppingCart, Heart, Eye } from 'lucide-react';
 import { useCartStore } from '@/stores/cartStore';
 import { useState } from 'react';
 
+// Import product images
+import silkBanarasi from '@/assets/products/silk-banarasi-saree.jpg';
+import designerLehenga from '@/assets/products/designer-lehenga-set.jpg';
+import embroideredKurti from '@/assets/products/embroidered-kurti.jpg';
+import partyGown from '@/assets/products/party-gown.jpg';
+import traditionalSalwar from '@/assets/products/traditional-salwar-suit.jpg';
+import indoWestern from '@/assets/products/indo-western-fusion-dress.jpg';
+
 interface Product {
   id: string;
   title: string;
@@ -31,7 +39,7 @@ const ProductsGrid = ({ title, collection, columns = 4 }: ProductsGridProps) => 
         title: "Silk Banarasi Saree",
         price: "₹4,999",
         originalPrice: "₹8,999", 
-        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&h=500&fit=crop&auto=format",
+        image: silkBanarasi,
         badge: "60% OFF"
       },
       {
@@ -39,7 +47,7 @@ const ProductsGrid = ({ title, collection, columns = 4 }: ProductsGridProps) => 
         title: "Designer Lehenga Set",
         price: "₹12,999",
         originalPrice: "₹19,999",
-        image: "https://images.unsplash.com/photo-1583391733956-6c78276477e1?w=400&h=500&fit=crop&auto=format",
+        image: designerLehenga,
         badge: "35% OFF"
       },
       {
@@ -47,7 +55,7 @@ const ProductsGrid = ({ title, collection, columns = 4 }: ProductsGridProps) => 
         title: "Embroidered Kurti", 
         price: "₹1,299",
         originalPrice: "₹2,499",
-        image: "https://images.unsplash.com/photo-1594736797933-d0bdb6efe47a?w=400&h=500&fit=crop&auto=format",
+        image: embroideredKurti,
         badge: "48% OFF"
       },
       {
@@ -55,7 +63,7 @@ const ProductsGrid = ({ title, collection, columns = 4 }: ProductsGridProps) => 
         title: "Party Gown",
         price: "₹3,999", 
         originalPrice: "₹6,999",
-        image: "https://images.unsplash.com/photo-1566479179817-4e9c8c2d40e1?w=400&h=500&fit=crop&auto=format",
+        image: partyGown,
         badge: "43% OFF"
       },
       {
@@ -63,7 +71,7 @@ const ProductsGrid = ({ title, collection, columns = 4 }: ProductsGridProps) => 
         title: "Traditional Salwar Suit",
         price: "₹2,799",
         originalPrice: "₹4,999",
-        image: "https://images.unsplash.com/photo-1583391733956-6c78276477e1?w=400&h=500&fit=crop&auto=format",
+        image: traditionalSalwar,
         badge: "44% OFF"
       },
       {
@@ -71,7 +79,7 @@ const ProductsGrid = ({ title, collection, columns = 4 }: ProductsGridProps) => 
         title: "Indo-Western Fusion Dress",
         price: "₹2,299",
         originalPrice: "₹3,999",
-        image: "https://images.unsplash.com/photo-1594736797933-d0bdb6efe47a?w=400&h=500&fit=crop&auto=format",
+        image: indoWestern,
         badge: "42% OFF"
       }
     ],
@@ -80,13 +88,13 @@ const ProductsGrid = ({ title, collection, columns = 4 }: ProductsGridProps) => 
         id: "5",
         title: "Pure Kanjivaram Saree",
         price: "₹15,999",
-        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&h=500&fit=crop"
+        image: silkBanarasi
       },
       {
         id: "6", 
         title: "Handloom Cotton Saree",
         price: "₹2,999",
-        image: "https://images.unsplash.com/photo-1583391733956-6c78276477e1?w=400&h=500&fit=crop"
+        image: silkBanarasi
       }
     ]
   };
