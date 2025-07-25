@@ -84,7 +84,14 @@ const ShoppingCartModal = () => {
               <span className="font-bold text-lg text-primary">₹{totalPrice.toLocaleString()}</span>
             </div>
             <div className="space-y-2">
-              <Button className="w-full bg-primary hover:bg-primary/90" size="lg">
+              <Button 
+                className="w-full bg-primary hover:bg-primary/90" 
+                size="lg"
+                onClick={() => {
+                  toggleCart();
+                  window.location.href = '/checkout';
+                }}
+              >
                 Proceed to Checkout
               </Button>
               <Button variant="outline" className="w-full" onClick={toggleCart}>
