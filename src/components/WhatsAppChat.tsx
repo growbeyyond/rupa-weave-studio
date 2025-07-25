@@ -13,7 +13,7 @@ const WhatsAppChat = () => {
     "Custom sizing available?"
   ];
 
-  const phoneNumber = "919876543210"; // Replace with actual WhatsApp number
+  const phoneNumber = "918978458377"; // Updated WhatsApp number
 
   const sendMessage = (text: string) => {
     const encodedMessage = encodeURIComponent(text);

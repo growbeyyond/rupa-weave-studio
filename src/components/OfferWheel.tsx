@@ -44,7 +44,7 @@ const OfferWheel = () => {
   };
 
   const sendToWhatsApp = () => {
-    const phoneNumber = "919876543210"; // Your WhatsApp number
+    const phoneNumber = "918978458377"; // Updated WhatsApp number
     const message = `🎉 Hi! I just won ${result} from Rupa's offer wheel!
     
 My Details:
@@ -105,19 +105,27 @@ I'm interested in your ethnic wear collection. Please share more details about t
             {offers.map((offer, index) => (
               <div
                 key={index}
-                className="absolute text-white font-bold text-xs flex items-center justify-center"
+                className="absolute flex items-center justify-center text-white font-bold text-[10px]"
                 style={{
                   top: '50%',
                   left: '50%',
-                  width: '90px',
-                  height: '20px',
-                  transform: `translate(-50%, -50%) rotate(${index * 45 + 22.5}deg) translateY(-70px)`,
-                  transformOrigin: '50% 70px',
+                  width: '60px',
+                  height: '30px',
+                  transform: `translate(-50%, -50%) rotate(${index * 45 + 22.5}deg) translateY(-60px)`,
+                  transformOrigin: '50% 60px',
                   textAlign: 'center',
-                  lineHeight: '1.2'
+                  lineHeight: '1.1',
+                  padding: '2px'
                 }}
               >
-                <span style={{ transform: `rotate(-${index * 45 + 22.5}deg)` }}>
+                <span 
+                  style={{ 
+                    transform: `rotate(-${index * 45 + 22.5}deg)`,
+                    display: 'block',
+                    whiteSpace: 'nowrap',
+                    fontSize: offer.length > 8 ? '8px' : '10px'
+                  }}
+                >
                   {offer}
                 </span>
               </div>
