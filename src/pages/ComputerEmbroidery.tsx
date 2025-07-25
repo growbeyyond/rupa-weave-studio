@@ -16,10 +16,11 @@ import computerPremium1 from '@/assets/computer-premium-1.jpg';
 import computerPremium2 from '@/assets/computer-premium-2.jpg';
 import computerPremium3 from '@/assets/computer-premium-3.jpg';
 import computerPremium4 from '@/assets/computer-premium-4.jpg';
-import designerLehenga from '@/assets/products/designer-lehenga-set.jpg';
-import embroideredKurti from '@/assets/products/embroidered-kurti.jpg';
+import computerAnarkali from '@/assets/computer-anarkali.jpg';
+import computerSaree from '@/assets/computer-saree.jpg';
+import computerJacket from '@/assets/computer-jacket.jpg';
+import computerDupatta from '@/assets/computer-dupatta.jpg';
 import indoWestern from '@/assets/products/indo-western-fusion-dress.jpg';
-import salwarSuit from '@/assets/products/traditional-salwar-suit.jpg';
 import partyGown from '@/assets/products/party-gown.jpg';
 import partyLehenga from '@/assets/products/party-lehenga-blue.jpg';
 
@@ -82,7 +83,7 @@ const ComputerEmbroidery = () => {
       title: "Digital Floral Anarkali",
       price: "₹16,999",
       originalPrice: "₹23,999",
-      image: embroideredKurti,
+      image: computerAnarkali,
       badge: "29% OFF",
       category: "anarkali",
       technique: "Computer Embroidery",
@@ -127,7 +128,7 @@ const ComputerEmbroidery = () => {
       title: "Binary Code Saree",
       price: "₹12,999",
       originalPrice: "₹17,999",
-      image: designerLehenga,
+      image: computerSaree,
       badge: "28% OFF",
       category: "saree",
       technique: "Digital Embroidery",
@@ -142,7 +143,7 @@ const ComputerEmbroidery = () => {
       title: "Circuit Board Jacket",
       price: "₹11,999",
       originalPrice: "₹16,999",
-      image: salwarSuit,
+      image: computerJacket,
       badge: "29% OFF",
       category: "jacket",
       technique: "Precision Stitch",
@@ -172,7 +173,7 @@ const ComputerEmbroidery = () => {
       title: "Gradient Wave Dupatta",
       price: "₹6,999",
       originalPrice: "₹9,999",
-      image: computerPremium2,
+      image: computerDupatta,
       badge: "30% OFF",
       category: "dupatta",
       technique: "Gradient Embroidery",

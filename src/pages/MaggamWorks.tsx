@@ -16,11 +16,11 @@ import maggamPremium1 from '@/assets/maggam-premium-1.jpg';
 import maggamPremium2 from '@/assets/maggam-premium-2.jpg';
 import maggamPremium3 from '@/assets/maggam-premium-3.jpg';
 import maggamPremium4 from '@/assets/maggam-premium-4.jpg';
-import bridalLehenga from '@/assets/products/bridal-lehenga-red.jpg';
+import maggamPeacock from '@/assets/maggam-peacock.jpg';
+import maggamSharara from '@/assets/maggam-sharara.jpg';
+import maggamDupatta from '@/assets/maggam-dupatta.jpg';
+import maggamCroptop from '@/assets/maggam-croptop.jpg';
 import receptionLehenga from '@/assets/products/reception-lehenga-gold.jpg';
-import designerLehenga from '@/assets/products/designer-lehenga-set.jpg';
-import kanjivaram from '@/assets/products/kanjivaram-saree-red.jpg';
-import banarasi from '@/assets/products/banarasi-purple-saree.jpg';
 
 const MaggamWorks = () => {
   const { addItem } = useCartStore();
@@ -66,7 +66,7 @@ const MaggamWorks = () => {
       title: "Peacock Maggam Anarkali",
       price: "₹22,999",
       originalPrice: "₹32,999",
-      image: bridalLehenga,
+      image: maggamPeacock,
       badge: "30% OFF",
       category: "anarkali",
       technique: "Intricate Maggam",
@@ -96,7 +96,7 @@ const MaggamWorks = () => {
       title: "Temple Border Maggam Saree",
       price: "₹18,999",
       originalPrice: "₹26,999",
-      image: kanjivaram,
+      image: maggamPremium3,
       badge: "30% OFF",
       category: "saree",
       technique: "Traditional Maggam",
@@ -111,7 +111,7 @@ const MaggamWorks = () => {
       title: "Butterfly Maggam Crop Top Set",
       price: "₹16,999",
       originalPrice: "₹24,999",
-      image: designerLehenga,
+      image: maggamCroptop,
       badge: "32% OFF",
       category: "crop-set",
       technique: "Modern Maggam",
@@ -126,7 +126,7 @@ const MaggamWorks = () => {
       title: "Vintage Maggam Sharara",
       price: "₹24,999",
       originalPrice: "₹34,999",
-      image: banarasi,
+      image: maggamSharara,
       badge: "29% OFF",
       category: "sharara",
       technique: "Vintage Maggam",
@@ -141,7 +141,7 @@ const MaggamWorks = () => {
       title: "Mandala Maggam Dupatta",
       price: "₹8,999",
       originalPrice: "₹12,999",
-      image: maggamPremium2,
+      image: maggamDupatta,
       badge: "31% OFF",
       category: "dupatta",
       technique: "Circular Maggam",
@@ -156,7 +156,7 @@ const MaggamWorks = () => {
       title: "Kundan Maggam Blouse",
       price: "₹12,999",
       originalPrice: "₹17,999",
-      image: maggamPremium3,
+      image: maggamPremium4,
       badge: "28% OFF",
       category: "blouse",
       technique: "Heavy Maggam",
@@ -171,7 +171,7 @@ const MaggamWorks = () => {
       title: "Bridal Maggam Veil",
       price: "₹15,999",
       originalPrice: "₹22,999",
-      image: maggamPremium4,
+      image: maggamPremium1,
       badge: "30% OFF",
       category: "veil",
       technique: "Delicate Maggam",
