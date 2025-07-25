@@ -11,15 +11,16 @@ import { useCartStore } from '@/stores/cartStore';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 
-// Import generated images
-import maggamWork1 from '@/assets/maggam-work-1.jpg';
-import maggamWork2 from '@/assets/maggam-work-2.jpg';
+// Import premium high-quality images
+import maggamPremium1 from '@/assets/maggam-premium-1.jpg';
+import maggamPremium2 from '@/assets/maggam-premium-2.jpg';
+import maggamPremium3 from '@/assets/maggam-premium-3.jpg';
+import maggamPremium4 from '@/assets/maggam-premium-4.jpg';
 import bridalLehenga from '@/assets/products/bridal-lehenga-red.jpg';
 import receptionLehenga from '@/assets/products/reception-lehenga-gold.jpg';
 import designerLehenga from '@/assets/products/designer-lehenga-set.jpg';
 import kanjivaram from '@/assets/products/kanjivaram-saree-red.jpg';
 import banarasi from '@/assets/products/banarasi-purple-saree.jpg';
-import silkBanarasi from '@/assets/products/silk-banarasi-saree.jpg';
 
 const MaggamWorks = () => {
   const { addItem } = useCartStore();
@@ -35,7 +36,7 @@ const MaggamWorks = () => {
       title: "Royal Maggam Bridal Lehenga",
       price: "₹45,999",
       originalPrice: "₹65,999",
-      image: maggamWork1,
+      image: maggamPremium1,
       badge: "30% OFF",
       category: "bridal",
       technique: "Hand Maggam",
@@ -50,7 +51,7 @@ const MaggamWorks = () => {
       title: "Emerald Maggam Saree",
       price: "₹28,999",
       originalPrice: "₹39,999",
-      image: maggamWork2,
+      image: maggamPremium2,
       badge: "28% OFF",
       category: "saree",
       technique: "Traditional Maggam",
@@ -140,7 +141,7 @@ const MaggamWorks = () => {
       title: "Mandala Maggam Dupatta",
       price: "₹8,999",
       originalPrice: "₹12,999",
-      image: silkBanarasi,
+      image: maggamPremium2,
       badge: "31% OFF",
       category: "dupatta",
       technique: "Circular Maggam",
@@ -155,12 +156,12 @@ const MaggamWorks = () => {
       title: "Kundan Maggam Blouse",
       price: "₹12,999",
       originalPrice: "₹17,999",
-      image: receptionLehenga,
+      image: maggamPremium3,
       badge: "28% OFF",
       category: "blouse",
       technique: "Heavy Maggam",
       workType: "Kundan Work",
-      color: "Gold",
+      color: "Royal Purple",
       rating: 4.8,
       reviews: 134,
       description: "Designer blouse with heavy maggam work and kundan embellishments. Perfect statement piece for special occasions and weddings."
@@ -170,7 +171,7 @@ const MaggamWorks = () => {
       title: "Bridal Maggam Veil",
       price: "₹15,999",
       originalPrice: "₹22,999",
-      image: maggamWork1,
+      image: maggamPremium4,
       badge: "30% OFF",
       category: "veil",
       technique: "Delicate Maggam",
@@ -265,9 +266,9 @@ const MaggamWorks = () => {
             </div>
             <div className="text-center">
               <img 
-                src={maggamWork1} 
+                src={maggamPremium1} 
                 alt="Maggam Work Showcase" 
-                className="rounded-lg shadow-lg mx-auto"
+                className="rounded-lg shadow-lg mx-auto max-w-md"
               />
             </div>
           </div>

@@ -11,9 +11,11 @@ import { useCartStore } from '@/stores/cartStore';
 import { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 
-// Import generated images
-import computerEmbroidery1 from '@/assets/computer-embroidery-1.jpg';
-import computerEmbroidery2 from '@/assets/computer-embroidery-2.jpg';
+// Import premium high-quality images
+import computerPremium1 from '@/assets/computer-premium-1.jpg';
+import computerPremium2 from '@/assets/computer-premium-2.jpg';
+import computerPremium3 from '@/assets/computer-premium-3.jpg';
+import computerPremium4 from '@/assets/computer-premium-4.jpg';
 import designerLehenga from '@/assets/products/designer-lehenga-set.jpg';
 import embroideredKurti from '@/assets/products/embroidered-kurti.jpg';
 import indoWestern from '@/assets/products/indo-western-fusion-dress.jpg';
@@ -35,7 +37,7 @@ const ComputerEmbroidery = () => {
       title: "Digital Geometric Lehenga",
       price: "₹18,999",
       originalPrice: "₹26,999",
-      image: computerEmbroidery1,
+      image: computerPremium1,
       badge: "30% OFF",
       category: "lehenga",
       technique: "Computer Embroidery",
@@ -50,7 +52,7 @@ const ComputerEmbroidery = () => {
       title: "Abstract Flow Kurti",
       price: "₹8,999",
       originalPrice: "₹12,999",
-      image: computerEmbroidery2,
+      image: computerPremium2,
       badge: "31% OFF",
       category: "kurti",
       technique: "Digital Embroidery",
@@ -65,7 +67,7 @@ const ComputerEmbroidery = () => {
       title: "Mandala Circuit Dress",
       price: "₹14,999",
       originalPrice: "₹20,999",
-      image: indoWestern,
+      image: computerPremium3,
       badge: "29% OFF",
       category: "dress",
       technique: "Precision Embroidery",
@@ -155,12 +157,12 @@ const ComputerEmbroidery = () => {
       title: "Holographic Effect Lehenga",
       price: "₹24,999",
       originalPrice: "₹33,999",
-      image: computerEmbroidery1,
+      image: computerPremium4,
       badge: "26% OFF",
       category: "lehenga",
       technique: "Special Effects",
       pattern: "Holographic Design",
-      color: "Iridescent",
+      color: "Iridescent Blue",
       rating: 4.9,
       reviews: 156,
       description: "Spectacular lehenga with holographic effect embroidery created through advanced computer technology. Changes color with light and movement."
@@ -170,7 +172,7 @@ const ComputerEmbroidery = () => {
       title: "Gradient Wave Dupatta",
       price: "₹6,999",
       originalPrice: "₹9,999",
-      image: computerEmbroidery2,
+      image: computerPremium2,
       badge: "30% OFF",
       category: "dupatta",
       technique: "Gradient Embroidery",
@@ -265,9 +267,9 @@ const ComputerEmbroidery = () => {
             </div>
             <div className="text-center">
               <img 
-                src={computerEmbroidery1} 
+                src={computerPremium1} 
                 alt="Computer Embroidery Showcase" 
-                className="rounded-lg shadow-lg mx-auto"
+                className="rounded-lg shadow-lg mx-auto max-w-md"
               />
             </div>
           </div>
