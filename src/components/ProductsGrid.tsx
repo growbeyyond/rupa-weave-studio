@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ShoppingCart, Heart, Eye } from 'lucide-react';
 import { useCartStore } from '@/stores/cartStore';
 import { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
 
 // Import product images
 import silkBanarasi from '@/assets/products/silk-banarasi-saree.jpg';
@@ -29,6 +30,7 @@ interface ProductsGridProps {
 
 const ProductsGrid = ({ title, collection, columns = 4 }: ProductsGridProps) => {
   const { addItem } = useCartStore();
+  const { toast } = useToast();
   const [wishlist, setWishlist] = useState<string[]>([]);
 
   // Mock products data  
@@ -116,6 +118,12 @@ const ProductsGrid = ({ title, collection, columns = 4 }: ProductsGridProps) => 
       price: product.price,
       originalPrice: product.originalPrice,
       image: product.image
+    });
+    
+    toast({
+      title: "Added to Cart",
+      description: `${product.title} has been added to your cart.`,
+      duration: 2000,
     });
   };
   
