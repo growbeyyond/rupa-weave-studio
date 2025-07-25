@@ -19,12 +19,10 @@ const HeroBanner = () => {
         <div className="w-1/3 bg-gradient-to-b from-pink-300 to-pink-400 flex items-center justify-center relative">
           <div className="text-center text-white px-8">
             <div className="mb-8">
-              <img 
-                src="/lovable-uploads/a9000f64-a7a2-42a9-bd7f-f7144cfca25d.png" 
-                alt="Rupa Collections" 
-                className="h-20 w-auto mx-auto mb-4"
-              />
-              <p className="text-lg tracking-[0.2em] opacity-90">THE COMPLETE LADIES STORE</p>
+              <h1 className="font-playfair text-4xl md:text-5xl font-bold tracking-wider mb-2 text-white">
+                RUPA'S
+              </h1>
+              <p className="text-lg tracking-[0.2em] opacity-90 text-white">THE COMPLETE LADIES STORE</p>
             </div>
             
             <div className="mb-8">
