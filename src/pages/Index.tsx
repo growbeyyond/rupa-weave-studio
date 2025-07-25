@@ -1,6 +1,7 @@
 import OfferBanner from '@/components/OfferBanner';
 import ScrollingOffers from '@/components/ScrollingOffers';
 import Navigation from '@/components/Navigation';
+import SecondaryBanner from '@/components/SecondaryBanner';
 import HeroBanner from '@/components/HeroBanner';
 import CategoryCarousel from '@/components/CategoryCarousel';
 import ProductsGrid from '@/components/ProductsGrid';
@@ -24,6 +25,7 @@ const Index = () => {
       <OfferBanner />
       <ScrollingOffers />
       <Navigation />
+      <SecondaryBanner />
       
       <HeroBanner />
       

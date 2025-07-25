@@ -19,34 +19,32 @@ const HeroBanner = () => {
         <div className="w-1/3 bg-gradient-to-b from-pink-300 to-pink-400 flex items-center justify-center relative">
           <div className="text-center text-white px-8">
             <div className="mb-8">
-              <h1 className="font-playfair text-4xl md:text-5xl font-bold tracking-wider mb-2">
-                RUPA'S
-              </h1>
-              <p className="text-sm tracking-[0.2em] opacity-90">INDIAN ETHNIC</p>
+              <img 
+                src="/lovable-uploads/a9000f64-a7a2-42a9-bd7f-f7144cfca25d.png" 
+                alt="Rupa Collections" 
+                className="h-20 w-auto mx-auto mb-4"
+              />
+              <p className="text-lg tracking-[0.2em] opacity-90">THE COMPLETE LADIES STORE</p>
             </div>
             
             <div className="mb-8">
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-2">
-                Breezy
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-2 text-amber-900">
+                Celebrate your big day with
               </h2>
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-2">
-                Styles,
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-2 text-amber-900">
+                the elegance of our
               </h2>
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4">
-                brighter
-                <span className="italic font-light"> Day</span>
+              <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4 text-amber-900">
+                Wedding
+              </h2>
+              <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4 text-amber-900">
+                Collection
               </h2>
               
               {/* Decorative ornament */}
               <div className="flex justify-center mb-6">
                 <div className="w-32 h-0.5 bg-white/60"></div>
               </div>
-            </div>
-            
-            <div>
-              <h3 className="font-playfair text-xl font-medium tracking-wide">
-                Find Your Summer Fit
-              </h3>
             </div>
           </div>
           

@@ -26,8 +26,12 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="font-playfair text-3xl font-bold text-primary tracking-wider">
-              RUPA'S
+            <a href="/" className="block">
+              <img 
+                src="/lovable-uploads/a9000f64-a7a2-42a9-bd7f-f7144cfca25d.png" 
+                alt="Rupa Collections - The Complete Ladies Store" 
+                className="h-16 w-auto"
+              />
             </a>
           </div>
 
