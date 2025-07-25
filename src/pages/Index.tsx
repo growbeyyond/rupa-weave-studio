@@ -3,6 +3,7 @@ import ScrollingOffers from '@/components/ScrollingOffers';
 import Navigation from '@/components/Navigation';
 import SecondaryBanner from '@/components/SecondaryBanner';
 import HeroBanner from '@/components/HeroBanner';
+import CustomerReviews from '@/components/CustomerReviews';
 import CategoryCarousel from '@/components/CategoryCarousel';
 import ProductsGrid from '@/components/ProductsGrid';
 import Footer from '@/components/Footer';
@@ -35,6 +36,8 @@ const Index = () => {
       <SecondaryBanner />
       
       <HeroBanner />
+      
+      <CustomerReviews />
       
       <div className="max-w-7xl mx-auto">
         <div className="py-16">

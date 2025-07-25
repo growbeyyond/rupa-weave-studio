@@ -1,7 +1,27 @@
+import { useState, useEffect } from 'react';
 import heroModel1 from '@/assets/hero-model1.jpg';
 import heroModel2 from '@/assets/hero-model2.jpg';
+import model3 from '@/assets/model-3.jpg';
+import model4 from '@/assets/model-4.jpg';
+import model5 from '@/assets/model-5.jpg';
+import model6 from '@/assets/model-6.jpg';
 
 const HeroBanner = () => {
+  const leftImages = [heroModel1, model3, model5];
+  const rightImages = [heroModel2, model4, model6];
+  
+  const [currentLeftIndex, setCurrentLeftIndex] = useState(0);
+  const [currentRightIndex, setCurrentRightIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentLeftIndex((prev) => (prev + 1) % leftImages.length);
+      setCurrentRightIndex((prev) => (prev + 1) % rightImages.length);
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [leftImages.length, rightImages.length]);
+
   return (
     <div className="relative w-full h-[80vh] overflow-hidden">
       {/* Background image with models */}
@@ -9,9 +29,9 @@ const HeroBanner = () => {
         {/* Left model */}
         <div className="w-1/3 relative">
           <img
-            src={heroModel1}
-            alt="Summer Collection - Pink Kurta"
-            className="w-full h-full object-cover"
+            src={leftImages[currentLeftIndex]}
+            alt="Summer Collection - Ethnic Wear"
+            className="w-full h-full object-cover transition-opacity duration-1000"
           />
         </div>
         
@@ -53,9 +73,9 @@ const HeroBanner = () => {
         {/* Right model */}
         <div className="w-1/3 relative">
           <img
-            src={heroModel2}
-            alt="Summer Collection - Green Dress"
-            className="w-full h-full object-cover"
+            src={rightImages[currentRightIndex]}
+            alt="Summer Collection - Ethnic Dress"
+            className="w-full h-full object-cover transition-opacity duration-1000"
           />
         </div>
       </div>
