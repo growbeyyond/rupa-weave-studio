@@ -10,13 +10,12 @@ const Navigation = () => {
   const navItems = [
     { name: 'HOME', href: '/' },
     { name: 'COLLECTIONS', href: '/collections' },
-    { name: 'READYMADE SUITS', href: '/readymade-suits' },
-    { name: 'NEW ARRIVALS', href: '/new-arrivals' },
+    { name: 'MAGGAM WORKS', href: '/maggam-works' },
+    { name: 'COMPUTER EMBROIDERY', href: '/computer-embroidery' },
     { name: 'KURTAS', href: '/kurtas' },
     { name: 'SAREES', href: '/sarees' },
     { name: 'DRESSES', href: '/dresses' },
     { name: 'BOTTOMS', href: '/bottoms' },
-    { name: 'SUMMER', href: '/summer' },
     { name: 'SALE', href: '/sale' }
   ];
 
