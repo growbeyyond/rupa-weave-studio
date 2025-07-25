@@ -23,13 +23,12 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/collections" element={<Collections />} />
-          <Route path="/readymade-suits" element={<TraditionalSarees />} />
-          <Route path="/new-arrivals" element={<Collections />} />
+          <Route path="/maggam-works" element={<TraditionalSarees />} />
+          <Route path="/computer-embroidery" element={<OccasionalLehengas />} />
           <Route path="/kurtas" element={<TraditionalSarees />} />
           <Route path="/sarees" element={<TraditionalSarees />} />
           <Route path="/dresses" element={<OccasionalLehengas />} />
           <Route path="/bottoms" element={<TraditionalSarees />} />
-          <Route path="/summer" element={<Collections />} />
           <Route path="/sale" element={<Sale />} />
           <Route path="/traditional-sarees" element={<TraditionalSarees />} />
           <Route path="/occasional-lehengas" element={<OccasionalLehengas />} />
