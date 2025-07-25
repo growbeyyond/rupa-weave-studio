@@ -17,25 +17,25 @@ const HeroBanner = () => {
         
         {/* Center content */}
         <div className="w-1/3 bg-gradient-to-b from-pink-300 to-pink-400 flex items-center justify-center relative">
-          <div className="text-center text-white px-8">
+          <div className="text-center text-white px-8 py-16">
             <div className="mb-8">
-              <h1 className="font-playfair text-4xl md:text-5xl font-bold tracking-wider mb-2 text-white">
+              <h1 className="font-playfair text-4xl md:text-5xl font-bold tracking-wider mb-4 text-white">
                 RUPA'S
               </h1>
               <p className="text-lg tracking-[0.2em] opacity-90 text-white">THE COMPLETE LADIES STORE</p>
             </div>
             
             <div className="mb-8">
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-2 text-amber-900">
+              <h2 className="font-playfair text-2xl md:text-3xl font-bold mb-3 text-amber-900">
                 Celebrate your big day with
               </h2>
-              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-2 text-amber-900">
+              <h2 className="font-playfair text-2xl md:text-3xl font-bold mb-3 text-amber-900">
                 the elegance of our
               </h2>
-              <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4 text-amber-900">
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-2 text-amber-900">
                 Wedding
               </h2>
-              <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4 text-amber-900">
+              <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4 text-amber-900">
                 Collection
               </h2>
               
