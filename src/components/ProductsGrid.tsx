@@ -23,39 +23,39 @@ const ProductsGrid = ({ title, collection, columns = 4 }: ProductsGridProps) => 
   const { addItem } = useCartStore();
   const [wishlist, setWishlist] = useState<string[]>([]);
 
-  // Mock products data
+  // Mock products data  
   const mockProducts: Record<string, Product[]> = {
     sale: [
       {
         id: "1",
         title: "Silk Banarasi Saree",
         price: "₹4,999",
-        originalPrice: "₹8,999",
-        image: "https://picsum.photos/seed/saree1/400/500",
+        originalPrice: "₹8,999", 
+        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&h=500&fit=crop",
         badge: "60% OFF"
       },
       {
-        id: "2",
+        id: "2", 
         title: "Designer Lehenga Set",
         price: "₹12,999",
         originalPrice: "₹19,999",
-        image: "https://picsum.photos/seed/lehenga1/400/500",
+        image: "https://images.unsplash.com/photo-1583391733956-6c78276477e1?w=400&h=500&fit=crop",
         badge: "35% OFF"
       },
       {
         id: "3",
-        title: "Embroidered Kurti",
+        title: "Embroidered Kurti", 
         price: "₹1,299",
         originalPrice: "₹2,499",
-        image: "https://picsum.photos/seed/kurti1/400/500",
+        image: "https://images.unsplash.com/photo-1594736797933-d0bdb6efe47a?w=400&h=500&fit=crop",
         badge: "48% OFF"
       },
       {
         id: "4",
         title: "Party Gown",
-        price: "₹3,999",
+        price: "₹3,999", 
         originalPrice: "₹6,999",
-        image: "https://picsum.photos/seed/gown1/400/500",
+        image: "https://images.unsplash.com/photo-1566479179817-4e9c8c2d40e1?w=400&h=500&fit=crop",
         badge: "43% OFF"
       }
     ],
@@ -64,13 +64,13 @@ const ProductsGrid = ({ title, collection, columns = 4 }: ProductsGridProps) => 
         id: "5",
         title: "Pure Kanjivaram Saree",
         price: "₹15,999",
-        image: "https://picsum.photos/seed/kanchi1/400/500"
+        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&h=500&fit=crop"
       },
       {
-        id: "6",
+        id: "6", 
         title: "Handloom Cotton Saree",
         price: "₹2,999",
-        image: "https://picsum.photos/seed/cotton1/400/500"
+        image: "https://images.unsplash.com/photo-1583391733956-6c78276477e1?w=400&h=500&fit=crop"
       }
     ]
   };

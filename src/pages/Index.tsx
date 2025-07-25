@@ -10,14 +10,21 @@ import OfferWheel from '@/components/OfferWheel';
 import WhatsAppChat from '@/components/WhatsAppChat';
 import ShoppingCartModal from '@/components/ShoppingCartModal';
 
+import traditionalSareesImg from '@/assets/traditional-sarees.jpg';
+import occasionalLehengasImg from '@/assets/occasional-lehengas.jpg';
+import partyGownsImg from '@/assets/party-gowns.jpg';
+import casualKurtisImg from '@/assets/casual-kurtis.jpg';
+import salwarKameezImg from '@/assets/salwar-kameez.jpg';
+import kidsEthnicImg from '@/assets/kids-ethnic.jpg';
+
 const Index = () => {
   const categories = [
-    { title: "Traditional Sarees", image: "https://picsum.photos/seed/saree/800/600", link: "/traditional-sarees" },
-    { title: "Occasional Lehengas", image: "https://picsum.photos/seed/lehenga/800/600", link: "/occasional-lehengas" },
-    { title: "Party Gowns", image: "https://picsum.photos/seed/party/800/600", link: "/party-gowns" },
-    { title: "Casual Kurtis", image: "https://picsum.photos/seed/kurti/800/600", link: "/casual-kurtis" },
-    { title: "Salwar Kameez Sets", image: "https://picsum.photos/seed/salwar/800/600", link: "/salwar-kameez" },
-    { title: "Kids Ethnic", image: "https://picsum.photos/seed/kids/800/600", link: "/kids" }
+    { title: "Traditional Sarees", image: traditionalSareesImg, link: "/traditional-sarees" },
+    { title: "Occasional Lehengas", image: occasionalLehengasImg, link: "/occasional-lehengas" },
+    { title: "Party Gowns", image: partyGownsImg, link: "/party-gowns" },
+    { title: "Casual Kurtis", image: casualKurtisImg, link: "/casual-kurtis" },
+    { title: "Salwar Kameez Sets", image: salwarKameezImg, link: "/salwar-kameez" },
+    { title: "Kids Ethnic", image: kidsEthnicImg, link: "/kids" }
   ];
 
   return (
