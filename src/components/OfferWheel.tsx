@@ -47,11 +47,16 @@ const OfferWheel = () => {
     const phoneNumber = "918978458377"; // Updated WhatsApp number
     const message = `🎉 Hi! I just won ${result} from Rupa's offer wheel!
     
-My Details:
+🎁 My Winning Offer: ${result}
+💳 Discount Code: SPIN${result.replace(/[^0-9]/g, '') || '25'}
+
+👤 My Details:
 📱 Name: ${userDetails.name}
 📞 Mobile: ${userDetails.mobile}
 
-I'm interested in your ethnic wear collection. Please share more details about the offer!`;
+I'm interested in your ethnic wear collection and would like to use my ${result} discount. Please share more details about your products and how I can apply this offer!
+
+Looking forward to shopping with Rupa's! 🛍️`;
 
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
