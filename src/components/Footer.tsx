@@ -38,7 +38,7 @@ const Footer = () => {
             <div className="space-y-3 font-inter text-sm">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span>+91 98765 43210</span>
+                <span>+91 89784 58377</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
@@ -46,7 +46,13 @@ const Footer = () => {
               </div>
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5" />
-                <span>123 Fashion Street, Mumbai, Maharashtra 400001</span>
+                <div>
+                  <p>Rupa Collections</p>
+                  <p>D.no: 10-7-39</p>
+                  <p>Beside: Somaraju Hospital</p>
+                  <p>Perugu Bazar</p>
+                  <p>Anakapalli - 531001</p>
+                </div>
               </div>
             </div>
           </div>

@@ -33,10 +33,9 @@ const About = () => {
               <h2 className="font-playfair text-2xl font-bold text-foreground mb-4">
                 Our Heritage
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Since 1971, Rupa Collections has been synonymous with exquisite ethnic fashion. 
-                What started as a small boutique in the heart of Mumbai has grown into a beloved 
-                brand that celebrates India's rich textile traditions while embracing contemporary 
+              <p className="text-muted-foreground leading-relaxed">
+                Located in the heart of Anakapalli, Rupa Collections has been serving the community since 1971. 
+                From our store at Perugu Bazar, we've grown into a beloved brand that celebrates India's rich textile traditions while embracing contemporary 
                 design sensibilities.
               </p>
               <p className="text-muted-foreground leading-relaxed">
