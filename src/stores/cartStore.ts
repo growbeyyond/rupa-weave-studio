@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
 interface CartItem {
   id: string;
@@ -23,49 +24,57 @@ interface CartStore {
   getTotalPrice: () => number;
 }
 
-export const useCartStore = create<CartStore>((set, get) => ({
-  items: [],
-  isOpen: false,
-  
-  addItem: (item) =>
-    set((state) => {
-      const existingItem = state.items.find((i) => i.id === item.id);
-      if (existingItem) {
-        return {
-          items: state.items.map((i) =>
-            i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
-          ),
-        };
-      }
-      return { items: [...state.items, { ...item, quantity: 1 }] };
+export const useCartStore = create<CartStore>()(
+  persist(
+    (set, get) => ({
+      items: [],
+      isOpen: false,
+      
+      addItem: (item) =>
+        set((state) => {
+          const existingItem = state.items.find((i) => i.id === item.id);
+          if (existingItem) {
+            return {
+              items: state.items.map((i) =>
+                i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+              ),
+            };
+          }
+          return { items: [...state.items, { ...item, quantity: 1 }] };
+        }),
+        
+      removeItem: (id) =>
+        set((state) => ({ items: state.items.filter((item) => item.id !== id) })),
+        
+      updateQuantity: (id, quantity) =>
+        set((state) => ({
+          items: quantity <= 0 
+            ? state.items.filter((item) => item.id !== id)
+            : state.items.map((item) =>
+                item.id === id ? { ...item, quantity } : item
+              ),
+        })),
+        
+      clearCart: () => set({ items: [] }),
+      
+      toggleCart: () => set((state) => ({ isOpen: !state.isOpen })),
+      
+      getTotalItems: () => {
+        const { items } = get();
+        return items.reduce((total, item) => total + item.quantity, 0);
+      },
+      
+      getTotalPrice: () => {
+        const { items } = get();
+        return items.reduce((total, item) => {
+          const price = parseFloat(item.price.replace(/[₹,]/g, ''));
+          return total + (price * item.quantity);
+        }, 0);
+      },
     }),
-    
-  removeItem: (id) =>
-    set((state) => ({ items: state.items.filter((item) => item.id !== id) })),
-    
-  updateQuantity: (id, quantity) =>
-    set((state) => ({
-      items: quantity <= 0 
-        ? state.items.filter((item) => item.id !== id)
-        : state.items.map((item) =>
-            item.id === id ? { ...item, quantity } : item
-          ),
-    })),
-    
-  clearCart: () => set({ items: [] }),
-  
-  toggleCart: () => set((state) => ({ isOpen: !state.isOpen })),
-  
-  getTotalItems: () => {
-    const { items } = get();
-    return items.reduce((total, item) => total + item.quantity, 0);
-  },
-  
-  getTotalPrice: () => {
-    const { items } = get();
-    return items.reduce((total, item) => {
-      const price = parseFloat(item.price.replace(/[₹,]/g, ''));
-      return total + (price * item.quantity);
-    }, 0);
-  },
-}));
+    {
+      name: 'rupa-cart-storage', // unique name for localStorage
+      partialize: (state) => ({ items: state.items }), // only persist cart items
+    }
+  )
+);
