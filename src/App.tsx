@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import TraditionalSarees from "./pages/TraditionalSarees";
 import OccasionalLehengas from "./pages/OccasionalLehengas";
+import MaggamWorks from "./pages/MaggamWorks";
+import ComputerEmbroidery from "./pages/ComputerEmbroidery";
 import Collections from "./pages/Collections";
 import Sale from "./pages/Sale";
 import About from "./pages/About";
@@ -26,8 +28,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/collections" element={<Collections />} />
-          <Route path="/maggam-works" element={<TraditionalSarees />} />
-          <Route path="/computer-embroidery" element={<OccasionalLehengas />} />
+          <Route path="/maggam-works" element={<MaggamWorks />} />
+          <Route path="/computer-embroidery" element={<ComputerEmbroidery />} />
           <Route path="/kurtas" element={<TraditionalSarees />} />
           <Route path="/sarees" element={<TraditionalSarees />} />
           <Route path="/dresses" element={<OccasionalLehengas />} />
