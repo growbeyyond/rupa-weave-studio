@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import WhatsAppChat from '@/components/WhatsAppChat';
 import ShoppingCartModal from '@/components/ShoppingCartModal';
 
-const TraditionalSarees = () => {
+const Sale = () => {
   return (
     <div className="min-h-screen bg-background font-inter">
       <OfferBanner />
@@ -15,17 +15,21 @@ const TraditionalSarees = () => {
       
       <div className="max-w-7xl mx-auto py-8">
         <div className="text-center mb-8">
-          <h1 className="font-playfair text-4xl font-bold text-foreground mb-4">
-            Traditional Sarees
+          <h1 className="font-playfair text-4xl font-bold text-primary mb-4">
+            🔥 MEGA SALE 🔥
           </h1>
-          <p className="font-inter text-muted-foreground max-w-2xl mx-auto">
-            Discover our exquisite collection of traditional sarees, featuring handwoven silks, 
-            intricate embroidery, and timeless designs that celebrate India's rich textile heritage.
+          <p className="font-inter text-muted-foreground max-w-2xl mx-auto mb-6">
+            Don't miss our biggest sale of the year! Up to 70% off on selected items.
           </p>
+          <div className="bg-primary text-primary-foreground p-4 rounded-lg inline-block">
+            <p className="font-bold text-lg">Use Code: <span className="bg-white text-primary px-3 py-1 rounded">MEGA70</span></p>
+            <p className="text-sm mt-1">Valid till 31st October 2025</p>
+          </div>
         </div>
         
         <ProductsGrid 
-          collection="traditional-sarees"
+          title="🎉 Sale Items"
+          collection="sale"
           columns={4}
         />
       </div>
@@ -39,4 +43,4 @@ const TraditionalSarees = () => {
   );
 };
 
-export default TraditionalSarees;
+export default Sale;

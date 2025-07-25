@@ -1,9 +1,13 @@
 import OfferBanner from '@/components/OfferBanner';
+import ScrollingOffers from '@/components/ScrollingOffers';
 import Navigation from '@/components/Navigation';
 import HeroBanner from '@/components/HeroBanner';
 import CategoryCarousel from '@/components/CategoryCarousel';
 import ProductsGrid from '@/components/ProductsGrid';
 import Footer from '@/components/Footer';
+import OfferWheel from '@/components/OfferWheel';
+import WhatsAppChat from '@/components/WhatsAppChat';
+import ShoppingCartModal from '@/components/ShoppingCartModal';
 
 const Index = () => {
   const categories = [
@@ -18,6 +22,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background font-inter">
       <OfferBanner />
+      <ScrollingOffers />
       <Navigation />
       
       <HeroBanner />
@@ -38,6 +43,11 @@ const Index = () => {
       </div>
       
       <Footer />
+      
+      {/* Floating Components */}
+      <OfferWheel />
+      <WhatsAppChat />
+      <ShoppingCartModal />
     </div>
   );
 };

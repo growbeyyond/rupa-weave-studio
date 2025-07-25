@@ -1,12 +1,16 @@
 import OfferBanner from '@/components/OfferBanner';
+import ScrollingOffers from '@/components/ScrollingOffers';
 import Navigation from '@/components/Navigation';
 import ProductsGrid from '@/components/ProductsGrid';
 import Footer from '@/components/Footer';
+import WhatsAppChat from '@/components/WhatsAppChat';
+import ShoppingCartModal from '@/components/ShoppingCartModal';
 
 const OccasionalLehengas = () => {
   return (
     <div className="min-h-screen bg-background font-inter">
       <OfferBanner />
+      <ScrollingOffers />
       <Navigation />
       
       <div className="max-w-7xl mx-auto py-8">
@@ -27,6 +31,10 @@ const OccasionalLehengas = () => {
       </div>
       
       <Footer />
+      
+      {/* Floating Components */}
+      <WhatsAppChat />
+      <ShoppingCartModal />
     </div>
   );
 };

@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Menu, X, ShoppingBag, User, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useCartStore } from '@/stores/cartStore';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { toggleCart, getTotalItems } = useCartStore();
 
   const navItems = [
     { name: 'HOME', href: '/' },
@@ -52,8 +54,13 @@ const Navigation = () => {
             <Button variant="ghost" size="icon">
               <User className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" onClick={toggleCart} className="relative">
               <ShoppingBag className="h-5 w-5" />
+              {getTotalItems() > 0 && (
+                <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">
+                  {getTotalItems()}
+                </span>
+              )}
             </Button>
             
             {/* Mobile menu button */}

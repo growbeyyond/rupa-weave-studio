@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import TraditionalSarees from "./pages/TraditionalSarees";
 import OccasionalLehengas from "./pages/OccasionalLehengas";
+import Collections from "./pages/Collections";
+import Sale from "./pages/Sale";
 import About from "./pages/About";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
@@ -20,6 +22,15 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/collections" element={<Collections />} />
+          <Route path="/readymade-suits" element={<TraditionalSarees />} />
+          <Route path="/new-arrivals" element={<Collections />} />
+          <Route path="/kurtas" element={<TraditionalSarees />} />
+          <Route path="/sarees" element={<TraditionalSarees />} />
+          <Route path="/dresses" element={<OccasionalLehengas />} />
+          <Route path="/bottoms" element={<TraditionalSarees />} />
+          <Route path="/summer" element={<Collections />} />
+          <Route path="/sale" element={<Sale />} />
           <Route path="/traditional-sarees" element={<TraditionalSarees />} />
           <Route path="/occasional-lehengas" element={<OccasionalLehengas />} />
           <Route path="/party-gowns" element={<TraditionalSarees />} />

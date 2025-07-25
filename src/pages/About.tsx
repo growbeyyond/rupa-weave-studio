@@ -1,11 +1,15 @@
 import OfferBanner from '@/components/OfferBanner';
+import ScrollingOffers from '@/components/ScrollingOffers';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import WhatsAppChat from '@/components/WhatsAppChat';
+import ShoppingCartModal from '@/components/ShoppingCartModal';
 
 const About = () => {
   return (
     <div className="min-h-screen bg-background font-inter">
       <OfferBanner />
+      <ScrollingOffers />
       <Navigation />
       
       <div className="max-w-4xl mx-auto py-16 px-4">
@@ -81,6 +85,10 @@ const About = () => {
       </div>
       
       <Footer />
+      
+      {/* Floating Components */}
+      <WhatsAppChat />
+      <ShoppingCartModal />
     </div>
   );
 };
