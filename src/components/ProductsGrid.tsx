@@ -31,7 +31,7 @@ const ProductsGrid = ({ title, collection, columns = 4 }: ProductsGridProps) => 
         title: "Silk Banarasi Saree",
         price: "₹4,999",
         originalPrice: "₹8,999", 
-        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&h=500&fit=crop",
+        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&h=500&fit=crop&auto=format",
         badge: "60% OFF"
       },
       {
@@ -39,7 +39,7 @@ const ProductsGrid = ({ title, collection, columns = 4 }: ProductsGridProps) => 
         title: "Designer Lehenga Set",
         price: "₹12,999",
         originalPrice: "₹19,999",
-        image: "https://images.unsplash.com/photo-1583391733956-6c78276477e1?w=400&h=500&fit=crop",
+        image: "https://images.unsplash.com/photo-1583391733956-6c78276477e1?w=400&h=500&fit=crop&auto=format",
         badge: "35% OFF"
       },
       {
@@ -47,7 +47,7 @@ const ProductsGrid = ({ title, collection, columns = 4 }: ProductsGridProps) => 
         title: "Embroidered Kurti", 
         price: "₹1,299",
         originalPrice: "₹2,499",
-        image: "https://images.unsplash.com/photo-1594736797933-d0bdb6efe47a?w=400&h=500&fit=crop",
+        image: "https://images.unsplash.com/photo-1594736797933-d0bdb6efe47a?w=400&h=500&fit=crop&auto=format",
         badge: "48% OFF"
       },
       {
@@ -55,8 +55,24 @@ const ProductsGrid = ({ title, collection, columns = 4 }: ProductsGridProps) => 
         title: "Party Gown",
         price: "₹3,999", 
         originalPrice: "₹6,999",
-        image: "https://images.unsplash.com/photo-1566479179817-4e9c8c2d40e1?w=400&h=500&fit=crop",
+        image: "https://images.unsplash.com/photo-1566479179817-4e9c8c2d40e1?w=400&h=500&fit=crop&auto=format",
         badge: "43% OFF"
+      },
+      {
+        id: "7",
+        title: "Traditional Salwar Suit",
+        price: "₹2,799",
+        originalPrice: "₹4,999",
+        image: "https://images.unsplash.com/photo-1583391733956-6c78276477e1?w=400&h=500&fit=crop&auto=format",
+        badge: "44% OFF"
+      },
+      {
+        id: "8",
+        title: "Indo-Western Fusion Dress",
+        price: "₹2,299",
+        originalPrice: "₹3,999",
+        image: "https://images.unsplash.com/photo-1594736797933-d0bdb6efe47a?w=400&h=500&fit=crop&auto=format",
+        badge: "42% OFF"
       }
     ],
     "traditional-sarees": [
