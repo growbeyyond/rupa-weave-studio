@@ -13,7 +13,31 @@ interface CategoryCarouselProps {
 const CategoryCarousel = ({ items }: CategoryCarouselProps) => {
   return (
     <div className="w-full py-8">
-      <div className="flex gap-6 overflow-x-auto scrollbar-hide px-4">
+      <div 
+        className="flex gap-6 overflow-x-auto px-4 pb-4 category-scroll"
+        style={{
+          scrollbarWidth: 'thin',
+          scrollbarColor: '#ec4899 #f1f5f9'
+        }}
+      >
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            .category-scroll::-webkit-scrollbar {
+              height: 8px;
+            }
+            .category-scroll::-webkit-scrollbar-track {
+              background: #f1f5f9;
+              border-radius: 4px;
+            }
+            .category-scroll::-webkit-scrollbar-thumb {
+              background: #ec4899;
+              border-radius: 4px;
+            }
+            .category-scroll::-webkit-scrollbar-thumb:hover {
+              background: #db2777;
+            }
+          `
+        }} />
         {items.map((item, index) => (
           <a
             key={index}
