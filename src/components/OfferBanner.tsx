@@ -1,32 +1,18 @@
-import { useState, useEffect } from 'react';
-
 const OfferBanner = () => {
-  const [timeLeft, setTimeLeft] = useState('');
-
-  useEffect(() => {
-    const endTime = new Date(Date.now() + 15 * 60 * 1000); // 15 minutes from now
-    
-    const timer = setInterval(() => {
-      const now = Date.now();
-      const diff = endTime.getTime() - now;
-      
-      if (diff <= 0) {
-        setTimeLeft('ENDED');
-        clearInterval(timer);
-        return;
-      }
-      
-      const minutes = Math.floor(diff / 60000);
-      const seconds = Math.floor((diff % 60000) / 1000);
-      setTimeLeft(`${minutes}:${seconds.toString().padStart(2, '0')}`);
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
   return (
-    <div className="sticky top-0 z-50 bg-gradient-to-r from-primary to-primary/90 text-primary-foreground text-center py-2 px-4 font-inter font-semibold text-sm">
-      ⏰ GRAND SUMMER SALE ends in <span className="font-bold">{timeLeft}</span> – code <strong>SUMMER60</strong>
+    <div className="sticky top-0 z-50 bg-primary text-primary-foreground py-3 px-4 font-inter text-center overflow-hidden">
+      <div className="flex items-center justify-center gap-4 text-sm font-semibold animate-pulse">
+        <span>🎉 EXCLUSIVE OFFER!</span>
+        <span>🎊 MONSOON SALE 2025!</span>
+        <span>🛍️ Unlock 5% DISCOUNT on ALL items at Rupa Collections!</span>
+        <span>Use Code: <strong className="bg-white text-primary px-2 py-1 rounded">MONSOON25</strong></span>
+        <span>✦ Offer Valid till: 31 October, 2025</span>
+        <span>🚚 Rs. 250 OFF on Your First Purchase!</span>
+        <span>📦 Free Shipping on All Domestic Orders!</span>
+        <button className="bg-white text-primary px-4 py-1 rounded font-bold hover:bg-gray-100 transition-colors">
+          Shop Now!
+        </button>
+      </div>
     </div>
   );
 };

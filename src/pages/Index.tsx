@@ -1,6 +1,6 @@
 import OfferBanner from '@/components/OfferBanner';
 import Navigation from '@/components/Navigation';
-import VideoBanner from '@/components/VideoBanner';
+import HeroBanner from '@/components/HeroBanner';
 import CategoryCarousel from '@/components/CategoryCarousel';
 import ProductsGrid from '@/components/ProductsGrid';
 import Footer from '@/components/Footer';
@@ -20,10 +20,7 @@ const Index = () => {
       <OfferBanner />
       <Navigation />
       
-      <VideoBanner 
-        src="https://rupa-collections.s3.ap-south-1.amazonaws.com/hero.mp4"
-        alt="Rupa Collections – Ethnic Elegance Redefined"
-      />
+      <HeroBanner />
       
       <div className="max-w-7xl mx-auto">
         <div className="py-16">

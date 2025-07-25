@@ -6,36 +6,37 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'Traditional Sarees', href: '/traditional-sarees' },
-    { name: 'Occasional Lehengas', href: '/occasional-lehengas' },
-    { name: 'Party Gowns', href: '/party-gowns' },
-    { name: 'Casual Kurtis', href: '/casual-kurtis' },
-    { name: 'Salwar Kameez', href: '/salwar-kameez' },
-    { name: 'Kids', href: '/kids' },
-    { name: 'About', href: '/about' },
-    { name: 'FAQ', href: '/faq' }
+    { name: 'HOME', href: '/' },
+    { name: 'COLLECTIONS', href: '/collections' },
+    { name: 'READYMADE SUITS', href: '/readymade-suits' },
+    { name: 'NEW ARRIVALS', href: '/new-arrivals' },
+    { name: 'KURTAS', href: '/kurtas' },
+    { name: 'SAREES', href: '/sarees' },
+    { name: 'DRESSES', href: '/dresses' },
+    { name: 'BOTTOMS', href: '/bottoms' },
+    { name: 'SUMMER', href: '/summer' },
+    { name: 'SALE', href: '/sale' }
   ];
 
   return (
-    <nav className="bg-background border-b border-border sticky top-12 z-40">
+    <nav className="bg-background border-b border-border sticky top-16 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="font-playfair text-2xl font-bold text-primary">
-              Rupa Collections
+            <a href="/" className="font-playfair text-3xl font-bold text-primary tracking-wider">
+              RUPA'S
             </a>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {navItems.slice(0, 7).map((item) => (
+          <div className="hidden lg:block">
+            <div className="flex items-center space-x-8">
+              {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="font-inter text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+                  className="font-inter text-foreground hover:text-primary text-sm font-medium tracking-wide transition-colors uppercase"
                 >
                   {item.name}
                 </a>
@@ -56,7 +57,7 @@ const Navigation = () => {
             </Button>
             
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <Button
                 variant="ghost"
                 size="icon"
@@ -71,7 +72,7 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden bg-background border-t border-border">
+        <div className="lg:hidden bg-background border-t border-border">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
               <a

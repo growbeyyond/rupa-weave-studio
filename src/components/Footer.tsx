@@ -7,9 +7,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="font-playfair text-2xl font-bold mb-4">Rupa Collections</h3>
+            <h3 className="font-playfair text-2xl font-bold mb-4">RUPA'S</h3>
             <p className="font-inter text-primary-foreground/80 mb-4 max-w-md">
-              Since 1971, we've been crafting exquisite ethnic fashion with love and legacy. 
+              Since 1971, we've been crafting exquisite ethnic fashion with love and legacy.
               From intricate tailoring to contemporary silhouettes, every piece tells a story.
             </p>
             <div className="flex space-x-4">
