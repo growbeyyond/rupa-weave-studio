@@ -6,10 +6,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import TraditionalSarees from "./pages/TraditionalSarees";
 import OccasionalLehengas from "./pages/OccasionalLehengas";
+import Kurtas from "./pages/Kurtas";
+import PartyWear from "./pages/PartyWear";
 import MaggamWorks from "./pages/MaggamWorks";
 import ComputerEmbroidery from "./pages/ComputerEmbroidery";
 import Collections from "./pages/Collections";
 import Sale from "./pages/Sale";
+import Wishlist from "./pages/Wishlist";
 import About from "./pages/About";
 import FAQ from "./pages/FAQ";
 import NotFound from "./pages/NotFound";
@@ -28,19 +31,14 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/collections" element={<Collections />} />
-          <Route path="/maggam-works" element={<MaggamWorks />} />
-          <Route path="/computer-embroidery" element={<ComputerEmbroidery />} />
-          <Route path="/kurtas" element={<TraditionalSarees />} />
-          <Route path="/sarees" element={<TraditionalSarees />} />
-          <Route path="/dresses" element={<OccasionalLehengas />} />
-          <Route path="/bottoms" element={<TraditionalSarees />} />
-          <Route path="/sale" element={<Sale />} />
           <Route path="/traditional-sarees" element={<TraditionalSarees />} />
           <Route path="/occasional-lehengas" element={<OccasionalLehengas />} />
-          <Route path="/party-gowns" element={<TraditionalSarees />} />
-          <Route path="/casual-kurtis" element={<TraditionalSarees />} />
-          <Route path="/salwar-kameez" element={<TraditionalSarees />} />
-          <Route path="/kids" element={<TraditionalSarees />} />
+          <Route path="/kurtas" element={<Kurtas />} />
+          <Route path="/party-wear" element={<PartyWear />} />
+          <Route path="/maggam-works" element={<MaggamWorks />} />
+          <Route path="/computer-embroidery" element={<ComputerEmbroidery />} />
+          <Route path="/sale" element={<Sale />} />
+          <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/about" element={<About />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/product/:id" element={<ProductDetail />} />

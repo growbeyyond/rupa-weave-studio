@@ -1,21 +1,24 @@
 import { useState } from 'react';
-import { Menu, X, ShoppingBag, User, Search } from 'lucide-react';
+import { Menu, X, ShoppingBag, User, Search, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCartStore } from '@/stores/cartStore';
+import { useWishlistStore } from '@/stores/wishlistStore';
+import SearchModal from './SearchModal';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { toggleCart, getTotalItems } = useCartStore();
+  const { getTotalItems: getWishlistItems } = useWishlistStore();
 
   const navItems = [
     { name: 'HOME', href: '/' },
-    { name: 'COLLECTIONS', href: '/collections' },
+    { name: 'TRADITIONAL SAREES', href: '/traditional-sarees' },
+    { name: 'OCCASIONAL LEHENGAS', href: '/occasional-lehengas' },
+    { name: 'KURTAS', href: '/kurtas' },
+    { name: 'PARTY WEAR', href: '/party-wear' },
     { name: 'MAGGAM WORKS', href: '/maggam-works' },
     { name: 'COMPUTER EMBROIDERY', href: '/computer-embroidery' },
-    { name: 'KURTAS', href: '/kurtas' },
-    { name: 'SAREES', href: '/sarees' },
-    { name: 'DRESSES', href: '/dresses' },
-    { name: 'BOTTOMS', href: '/bottoms' },
     { name: 'SALE', href: '/sale' }
   ];
 
@@ -51,11 +54,21 @@ const Navigation = () => {
 
           {/* Right side icons */}
           <div className="flex items-center gap-4">
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(true)}>
               <Search className="h-5 w-5" />
             </Button>
             <Button variant="ghost" size="icon">
               <User className="h-5 w-5" />
+            </Button>
+            <Button variant="ghost" size="icon" asChild className="relative">
+              <a href="/wishlist">
+                <Heart className="h-5 w-5" />
+                {getWishlistItems() > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">
+                    {getWishlistItems()}
+                  </span>
+                )}
+              </a>
             </Button>
             <Button variant="ghost" size="icon" onClick={toggleCart} className="relative">
               <ShoppingBag className="h-5 w-5" />
@@ -97,6 +110,8 @@ const Navigation = () => {
           </div>
         </div>
       )}
+      
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </nav>
   );
 };
