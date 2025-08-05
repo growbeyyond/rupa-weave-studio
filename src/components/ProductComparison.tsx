@@ -1,21 +1,10 @@
 import { useState } from 'react';
 import { X, Heart, ShoppingBag, Scale } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { useCartStore } from '@/stores/cartStore';
 import { useWishlistStore } from '@/stores/wishlistStore';
-
-interface Product {
-  id: string;
-  title: string;
-  price: string;
-  originalPrice?: string;
-  image: string;
-  category: string;
-  fabric?: string;
-  care?: string;
-  occasion?: string;
-}
+import type { Product } from '@/types/product';
 
 interface ProductComparisonProps {
   products: Product[];
@@ -54,6 +43,9 @@ const ProductComparison = ({ products, isOpen, onClose, onRemoveProduct }: Produ
             <Scale className="w-5 h-5" />
             Compare Products ({products.length})
           </DialogTitle>
+          <DialogDescription>
+            Compare selected products side by side to make the best choice
+          </DialogDescription>
         </DialogHeader>
         
         <div className="overflow-auto">
@@ -79,6 +71,10 @@ const ProductComparison = ({ products, isOpen, onClose, onRemoveProduct }: Produ
                     src={product.image}
                     alt={product.title}
                     className="w-full h-48 object-cover rounded mb-4"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.currentTarget.src = '/placeholder.svg';
+                    }}
                   />
                   
                   <h3 className="font-medium mb-2">{product.title}</h3>

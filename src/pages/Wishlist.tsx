@@ -2,6 +2,7 @@ import { Heart, ShoppingBag, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useWishlistStore } from '@/stores/wishlistStore';
 import { useCartStore } from '@/stores/cartStore';
+import type { WishlistItem } from '@/types/product';
 import OfferBanner from '@/components/OfferBanner';
 import ScrollingOffers from '@/components/ScrollingOffers';
 import Navigation from '@/components/Navigation';
@@ -14,7 +15,7 @@ const Wishlist = () => {
   const { items, removeItem, clearWishlist } = useWishlistStore();
   const { addItem: addToCart } = useCartStore();
 
-  const handleMoveToCart = (item: any) => {
+  const handleMoveToCart = (item: WishlistItem) => {
     addToCart({
       id: item.id,
       title: item.title,

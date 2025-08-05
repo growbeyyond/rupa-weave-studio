@@ -5,6 +5,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Checkbox } from '@/components/ui/checkbox';
 import { useCartStore } from '@/stores/cartStore';
 import { useWishlistStore } from '@/stores/wishlistStore';
+import type { Product } from '@/types/product';
 import OfferBanner from '@/components/OfferBanner';
 import ScrollingOffers from '@/components/ScrollingOffers';
 import Navigation from '@/components/Navigation';
@@ -13,13 +14,13 @@ import WhatsAppChat from '@/components/WhatsAppChat';
 import ShoppingCartModal from '@/components/ShoppingCartModal';
 import { Link } from 'react-router-dom';
 
-const products = [
-  { id: '5', title: 'Embroidered Kurti Set', price: '₹3,999', originalPrice: '₹5,999', image: '/src/assets/products/embroidered-kurti.jpg', color: 'Blue', size: ['S', 'M', 'L', 'XL'] },
-  { id: '101', title: 'Cotton Casual Kurti', price: '₹1,999', originalPrice: '₹2,999', image: '/src/assets/casual-kurtis.jpg', color: 'White', size: ['S', 'M', 'L'] },
-  { id: '102', title: 'Silk Festive Kurti', price: '₹4,999', originalPrice: '₹6,999', image: '/src/assets/computer-embroidery-1.jpg', color: 'Red', size: ['M', 'L', 'XL'] },
-  { id: '103', title: 'Block Print Kurti', price: '₹2,499', originalPrice: '₹3,499', image: '/src/assets/computer-embroidery-2.jpg', color: 'Green', size: ['S', 'M', 'L', 'XL'] },
-  { id: '104', title: 'Floral Printed Kurti', price: '₹1,799', originalPrice: '₹2,499', image: '/src/assets/maggam-work-1.jpg', color: 'Pink', size: ['S', 'M', 'L'] },
-  { id: '105', title: 'Designer Kurti with Dupatta', price: '₹5,999', originalPrice: '₹7,999', image: '/src/assets/maggam-work-2.jpg', color: 'Yellow', size: ['M', 'L', 'XL'] },
+const products: Product[] = [
+  { id: '5', title: 'Embroidered Kurti Set', price: '₹3,999', originalPrice: '₹5,999', image: '/placeholder.svg', color: 'Blue', size: ['S', 'M', 'L', 'XL'], category: 'Kurtas' },
+  { id: '101', title: 'Cotton Casual Kurti', price: '₹1,999', originalPrice: '₹2,999', image: '/placeholder.svg', color: 'White', size: ['S', 'M', 'L'], category: 'Kurtas' },
+  { id: '102', title: 'Silk Festive Kurti', price: '₹4,999', originalPrice: '₹6,999', image: '/placeholder.svg', color: 'Red', size: ['M', 'L', 'XL'], category: 'Kurtas' },
+  { id: '103', title: 'Block Print Kurti', price: '₹2,499', originalPrice: '₹3,499', image: '/placeholder.svg', color: 'Green', size: ['S', 'M', 'L', 'XL'], category: 'Kurtas' },
+  { id: '104', title: 'Floral Printed Kurti', price: '₹1,799', originalPrice: '₹2,499', image: '/placeholder.svg', color: 'Pink', size: ['S', 'M', 'L'], category: 'Kurtas' },
+  { id: '105', title: 'Designer Kurti with Dupatta', price: '₹5,999', originalPrice: '₹7,999', image: '/placeholder.svg', color: 'Yellow', size: ['M', 'L', 'XL'], category: 'Kurtas' },
 ];
 
 const Kurtas = () => {
@@ -79,7 +80,7 @@ const Kurtas = () => {
     }
   };
 
-  const handleAddToCart = (product: any) => {
+  const handleAddToCart = (product: Product) => {
     addToCart({
       id: product.id,
       title: product.title,
@@ -89,7 +90,7 @@ const Kurtas = () => {
     });
   };
 
-  const handleWishlistToggle = (product: any) => {
+  const handleWishlistToggle = (product: Product) => {
     if (isInWishlist(product.id)) {
       removeFromWishlist(product.id);
     } else {
@@ -228,6 +229,10 @@ const Kurtas = () => {
                       src={product.image}
                       alt={product.title}
                       className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.src = '/placeholder.svg';
+                      }}
                     />
                     <Button
                       size="sm"

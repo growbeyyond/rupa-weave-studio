@@ -5,6 +5,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Checkbox } from '@/components/ui/checkbox';
 import { useCartStore } from '@/stores/cartStore';
 import { useWishlistStore } from '@/stores/wishlistStore';
+import type { Product } from '@/types/product';
 import OfferBanner from '@/components/OfferBanner';
 import ScrollingOffers from '@/components/ScrollingOffers';
 import Navigation from '@/components/Navigation';
@@ -13,13 +14,13 @@ import WhatsAppChat from '@/components/WhatsAppChat';
 import ShoppingCartModal from '@/components/ShoppingCartModal';
 import { Link } from 'react-router-dom';
 
-const products = [
-  { id: '4', title: 'Party Wear Anarkali', price: '₹8,999', originalPrice: '₹11,999', image: '/src/assets/products/anarkali-green.jpg', color: 'Green', size: ['S', 'M', 'L', 'XL'] },
-  { id: '10', title: 'Elegant Party Gown', price: '₹12,999', originalPrice: '₹15,999', image: '/src/assets/products/party-gown.jpg', color: 'Black', size: ['S', 'M', 'L'] },
-  { id: '201', title: 'Sequined Party Dress', price: '₹9,999', originalPrice: '₹12,999', image: '/src/assets/party-gowns.jpg', color: 'Gold', size: ['M', 'L', 'XL'] },
-  { id: '202', title: 'Designer Party Wear', price: '₹14,999', originalPrice: '₹18,999', image: '/src/assets/computer-premium-1.jpg', color: 'Red', size: ['S', 'M', 'L', 'XL'] },
-  { id: '203', title: 'Cocktail Dress', price: '₹7,999', originalPrice: '₹10,999', image: '/src/assets/computer-premium-2.jpg', color: 'Blue', size: ['S', 'M', 'L'] },
-  { id: '204', title: 'Evening Gown', price: '₹16,999', originalPrice: '₹21,999', image: '/src/assets/computer-premium-3.jpg', color: 'Purple', size: ['M', 'L', 'XL'] },
+const products: Product[] = [
+  { id: '4', title: 'Party Wear Anarkali', price: '₹8,999', originalPrice: '₹11,999', image: '/placeholder.svg', color: 'Green', size: ['S', 'M', 'L', 'XL'], category: 'Party Wear' },
+  { id: '10', title: 'Elegant Party Gown', price: '₹12,999', originalPrice: '₹15,999', image: '/placeholder.svg', color: 'Black', size: ['S', 'M', 'L'], category: 'Party Wear' },
+  { id: '201', title: 'Sequined Party Dress', price: '₹9,999', originalPrice: '₹12,999', image: '/placeholder.svg', color: 'Gold', size: ['M', 'L', 'XL'], category: 'Party Wear' },
+  { id: '202', title: 'Designer Party Wear', price: '₹14,999', originalPrice: '₹18,999', image: '/placeholder.svg', color: 'Red', size: ['S', 'M', 'L', 'XL'], category: 'Party Wear' },
+  { id: '203', title: 'Cocktail Dress', price: '₹7,999', originalPrice: '₹10,999', image: '/placeholder.svg', color: 'Blue', size: ['S', 'M', 'L'], category: 'Party Wear' },
+  { id: '204', title: 'Evening Gown', price: '₹16,999', originalPrice: '₹21,999', image: '/placeholder.svg', color: 'Purple', size: ['M', 'L', 'XL'], category: 'Party Wear' },
 ];
 
 const PartyWear = () => {
@@ -79,7 +80,7 @@ const PartyWear = () => {
     }
   };
 
-  const handleAddToCart = (product: any) => {
+  const handleAddToCart = (product: Product) => {
     addToCart({
       id: product.id,
       title: product.title,
@@ -89,7 +90,7 @@ const PartyWear = () => {
     });
   };
 
-  const handleWishlistToggle = (product: any) => {
+  const handleWishlistToggle = (product: Product) => {
     if (isInWishlist(product.id)) {
       removeFromWishlist(product.id);
     } else {
@@ -228,6 +229,10 @@ const PartyWear = () => {
                       src={product.image}
                       alt={product.title}
                       className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.src = '/placeholder.svg';
+                      }}
                     />
                     <Button
                       size="sm"
