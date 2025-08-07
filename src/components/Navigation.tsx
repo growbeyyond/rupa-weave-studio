@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Menu, X, ShoppingBag, User, Search, Heart } from 'lucide-react';
+import { Menu, X, ShoppingBag, User, Search, Heart, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCartStore } from '@/stores/cartStore';
 import { useWishlistStore } from '@/stores/wishlistStore';
+import { useAuth } from '@/hooks/useAuth';
 import SearchModal from './SearchModal';
 
 const Navigation = () => {
@@ -10,6 +11,7 @@ const Navigation = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { toggleCart, getTotalItems } = useCartStore();
   const { getTotalItems: getWishlistItems } = useWishlistStore();
+  const { user, signOut } = useAuth();
 
   const navItems = [
     { name: 'HOME', href: '/' },
@@ -57,9 +59,17 @@ const Navigation = () => {
             <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(true)}>
               <Search className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon">
-              <User className="h-5 w-5" />
-            </Button>
+            {user ? (
+              <Button variant="ghost" size="icon" onClick={signOut} title="Sign Out">
+                <LogOut className="h-5 w-5" />
+              </Button>
+            ) : (
+              <Button variant="ghost" size="icon" asChild>
+                <a href="/auth">
+                  <User className="h-5 w-5" />
+                </a>
+              </Button>
+            )}
             <Button variant="ghost" size="icon" asChild className="relative">
               <a href="/wishlist">
                 <Heart className="h-5 w-5" />
